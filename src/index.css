@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .banner_icons {
+      @apply font-normal leading-4 text-[10px]
+    }
+    .container {
+      @apply lg:max-w-[1320px] md-x:max-w-[1140px] md-s:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] m-auto px-3
+    }
+  }
+
+  /* @layer base {
+    html {
+      font-family: 'Josefin Sans', system-ui, sans-serif;
+    }
+  } */
