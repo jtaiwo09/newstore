@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useField } from "formik";
-import { GrFormViewHide, GrFormView } from "react-icons/Gr";
+import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
 
 const TextField = ({ label, type, ...props }) => {
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
@@ -11,16 +11,16 @@ const TextField = ({ label, type, ...props }) => {
     if (type === "password") {
       if (show) {
         return (
-          <GrFormView
+          <FaRegEye
             onClick={() => setShow((prevState) => !prevState)}
-            className="absolute right-4 text-[25px] cursor-pointer"
+            className="absolute right-5 text-[20px] cursor-pointer text-[#000]/50"
           />
         );
       } else
         return (
-          <GrFormViewHide
+          <FaRegEyeSlash
             onClick={() => setShow((prevState) => !prevState)}
-            className="absolute right-4 text-[25px] cursor-pointer"
+            className="absolute right-5 text-[20px] cursor-pointer text-[#000]/50"
           />
         );
     }
