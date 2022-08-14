@@ -79,9 +79,7 @@ const Order = () => {
       });
   };
 
-  const onClose = () => {
-    // console.log("closed");
-  };
+  const onClose = () => {};
 
   const handleFlutterPayment = useFlutterwave(flutterwaveConfig);
   const initializePayment = usePaystackPayment(paystackConfig);

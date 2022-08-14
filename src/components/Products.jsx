@@ -2,16 +2,19 @@ import React from "react";
 import Product from "./Product";
 import { useProductsQuery } from "../apps/services/product";
 import Loader from "./reuseables/Loader";
+import Alert from "./reuseables/Alert";
 
 const Products = () => {
-  const { data, isLoading, isError } = useProductsQuery();
+  const { data, isLoading, isError, error } = useProductsQuery();
 
   return (
     <section className="container" id="product">
       {isLoading ? (
         <Loader />
       ) : isError ? (
-        <h1>Error</h1>
+        <Alert type="error" show={isError}>
+          {error.data.message}
+        </Alert>
       ) : (
         <div className="flex flex-wrap mt-[2%] mb-[6%]">
           {data?.map((product) => (

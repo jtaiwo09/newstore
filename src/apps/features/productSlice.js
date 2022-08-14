@@ -40,7 +40,6 @@ const productSlice = createSlice({
       .addMatcher(
         productApi.endpoints.postReview.matchFulfilled,
         (state, { payload }) => {
-          console.log("Store", payload.data);
           state.reviews.push(...payload.data);
         }
       )

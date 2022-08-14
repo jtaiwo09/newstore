@@ -9,10 +9,8 @@ import { useLoginMutation } from "../apps/services/auth";
 const Login = () => {
   const navigate = useNavigate();
   const [login, { error, isError, isLoading, isSuccess }] = useLoginMutation();
-  // const redirect = location.search ? `/${location.search.split("=")[1]}` : "/";
   const { search } = useLocation();
   const redirect = search.split("=")[1];
-  // console.log(redirect);
 
   if (isSuccess) {
     if (redirect) navigate(`/${redirect}`);

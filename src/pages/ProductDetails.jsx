@@ -234,7 +234,9 @@ const ProductDetails = () => {
                       </div>
                     ))
                   ) : (
-                    <h1>No Review</h1>
+                    <div className="w-full px-3 py-4 rounded-[4px] font-[300] bg-orange-100 mb-5">
+                      No Reviews
+                    </div>
                   )}
                 </div>
                 <div className="flex-1 px-3">
@@ -245,7 +247,7 @@ const ProductDetails = () => {
                           {postReviewError.data.message}
                         </Alert>
                       )}
-                      <h3 className="mb-4 pl-3 uppercase font-[300]">
+                      <h3 className="mb-4 uppercase font-[300]">
                         WRITE A CUSTOMER REVIEW
                       </h3>
                       <form onSubmit={handleSubmit}>
