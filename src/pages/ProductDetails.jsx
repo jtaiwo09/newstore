@@ -42,7 +42,6 @@ const ProductDetails = () => {
   const reviews = useSelector((state) => state.products.reviews);
   const user = useSelector((state) => state.user.user);
   useGetProductReviewsQuery(id);
-  const [reviewErr, setReviewErr] = useState("");
 
   const addItemToCart = () => {
     const checIfItemInCart = cart.some((product) => product._id == id);
@@ -81,9 +80,7 @@ const ProductDetails = () => {
       .then(() => {
         setReview({ rating: "", comment: "" });
       })
-      .catch((error) => {
-        setReviewErr(error.data.message);
-      });
+      .catch();
   };
 
   return (
@@ -247,7 +244,7 @@ const ProductDetails = () => {
                     <>
                       {postReviewIsError && (
                         <Alert show={postReviewIsError} type="error">
-                          {reviewErr}
+                          {postReviewError.data.message}
                         </Alert>
                       )}
                       <h3 className="mb-4 uppercase font-[300]">
