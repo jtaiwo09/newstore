@@ -5,8 +5,8 @@ export const cartApi = api.injectEndpoints({
     addShippingDetails: build.mutation({
       query(data) {
         return {
-          url: "order/shipping",
-          method: "PUT",
+          url: "shipping",
+          method: "POST",
           body: data,
         };
       },
@@ -15,8 +15,8 @@ export const cartApi = api.injectEndpoints({
     getShippingDetails: build.query({
       query() {
         return {
-          url: "order/shipping",
-          method: "POST",
+          url: "shipping",
+          method: "GET",
         };
       },
       invalidatesTags: ["Cart"],

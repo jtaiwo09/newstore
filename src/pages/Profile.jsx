@@ -208,8 +208,8 @@ const Profile = () => {
               ) : (
                 <>
                   {orderList.length ? (
-                    <div className="mb-[3rem] px-3 w-full md:w-[70%]">
-                      <table className="w-[100%] table-fixed max-h-fit">
+                    <div className="!mb-[3rem] md-s:px-3 w-full md-s:w-[70%] overflow-x-scroll">
+                      <table className="w-[100%] min-w-[516px] max-h-fit">
                         <thead>
                           <tr>
                             <th>ID</th>

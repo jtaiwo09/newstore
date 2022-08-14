@@ -29,7 +29,7 @@ const Navbar = () => {
               <img src={Brand} alt="" className="w-[100px]" />
             </Link>
           </div>
-          <div className="h-[50px] w-full md:flex-1 px-3 flex items-center order-1 md:-order-none">
+          <div className="h-[40px] md:h-[50px] w-full md:flex-1 md:px-3 flex items-center order-1 md:-order-none">
             <form
               action=""
               className="h-[100%] m-auto w-[100%] max-w-[560px] flex"
@@ -37,11 +37,11 @@ const Navbar = () => {
               <input
                 type="text"
                 placeholder="Search"
-                className="text-[1rem] w-[80%] text-[#212529] focus:outline-none px-3 border border-solid border-[#ced4da] h-full"
+                className="text-[1rem] rounded-l-[4px] w-[80%] text-[#212529] focus:outline-none px-3 border border-solid border-[#ced4da] h-full"
               />
               <button
                 type="submit"
-                className="h-full bg-black w-[20%] text-white"
+                className="h-full bg-black w-[20%] text-white rounded-r-[4px]"
               >
                 Search
               </button>

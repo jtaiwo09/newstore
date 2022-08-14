@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import TextField from "../components/TextField";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import {
   useAddShippingDetailsMutation,
   useGetShippingDetailsQuery,
@@ -14,6 +14,7 @@ import Loader from "../components/reuseables/Loader";
 
 const Shipping = () => {
   const shipping = useSelector((state) => state.cart.shipping);
+  const userId = useSelector((state) => state.user.user._id);
   const navigateTo = useNavigate();
   const [addShippingDetails, result] = useAddShippingDetailsMutation();
   const { data, error, isError, isLoading } = useGetShippingDetailsQuery();
@@ -41,7 +42,7 @@ const Shipping = () => {
                 phone: Yup.string().required("Phone number is required"),
               })}
               onSubmit={(values, { setSubmitting }) => {
-                addShippingDetails(values)
+                addShippingDetails({ ...values, user: userId })
                   .unwrap()
                   .then(() => navigateTo("/payment"))
                   .catch((error) => alert(error));

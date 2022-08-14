@@ -56,7 +56,7 @@ const ProductDetails = () => {
       navigateTo("/cart");
     } else {
       setError(true);
-      setTimeout(() => setError(false), 100);
+      setTimeout(() => setError(false), 0);
     }
   };
 
