@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && echo '/* /index.html  200' | cat >dist/_redirects", 
+    "build": "vite build && echo '/* /index.html  200' | cat >dist/_redirects",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -27,6 +27,7 @@
     "react-number-format": "^4.9.3",
     "react-paystack": "^4.0.1",
     "react-redux": "^8.0.2",
+    "react-responsive-carousel": "^3.2.23",
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
     "react-toastify": "^9.0.8",

@@ -11,6 +11,7 @@ import PlaceOrder from "./pages/PlaceOrder";
 import Profile from "./pages/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Order from "./pages/Order";
+import "./App.css";
 
 function App() {
   return (

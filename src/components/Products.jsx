@@ -7,7 +7,7 @@ const Products = () => {
   const { data, isLoading, isError } = useProductsQuery();
 
   return (
-    <section className="container">
+    <section className="container" id="product">
       {isLoading ? (
         <Loader />
       ) : isError ? (
