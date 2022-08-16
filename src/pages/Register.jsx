@@ -29,7 +29,7 @@ const Register = () => {
                 {registerError.data.error}
               </Alert>
             )}
-            <h2 className="uppercase text-center mb-1 font-[500] text-20 sm:text-[36px]">
+            <h2 className="uppercase text-center mb-1 font-[500] text-[24px] sm:text-[36px]">
               Register
             </h2>
             <p className="mx-auto max-w-[380px] w-full mb-4 text-center space-x-6">
