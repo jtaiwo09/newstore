@@ -19,8 +19,8 @@ const Login = () => {
       <div className="container px-[20px] py-[50px] flex justify-center">
         <Formik
           initialValues={{
-            email: "taiwokelvin@gmail.com",
-            password: "123456",
+            email: "",
+            password: "",
           }}
           validationSchema={Yup.object({
             email: Yup.string()
