@@ -13,6 +13,8 @@ const Login = () => {
   const { search } = useLocation();
   const redirect = search.split("=")[1];
 
+  console.log(error);
+
   return (
     <div>
       <Navbar />
@@ -48,7 +50,7 @@ const Login = () => {
           <Form className="max-w-[450px] w-full shadow-lg py-[35px] px-[30px] bg-white rounded-[5px]">
             {isError && (
               <Alert type="error" show={isError}>
-                {error.data.message}
+                {error.data.error}
               </Alert>
             )}
             <div className="mb-[20px]">
