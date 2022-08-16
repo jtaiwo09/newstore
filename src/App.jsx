@@ -15,6 +15,8 @@ import "./App.css";
 import VerifyEmail from "./pages/VerifyEmail";
 import EmailNotVerified from "./pages/EmailNotVerified";
 import EmailVerificationSent from "./pages/EmailVerificationSent";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 
 function App() {
   return (
@@ -27,8 +29,12 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/verify/:userId/:uniqueString" element={<VerifyEmail />} />
+        <Route
+          path="/reset-password/:userId/:uniqueString"
+          element={<ResetPassword />}
+        />
         <Route path="/email-notverified" element={<EmailNotVerified />} />
-
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route
           path="/email-verification-sent"
           element={<EmailVerificationSent />}

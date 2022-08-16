@@ -37,6 +37,32 @@ export const authApi = api.injectEndpoints({
       },
       invalidatesTags: ["Auth"],
     }),
+    forgotPwd: build.mutation({
+      query(email) {
+        return {
+          url: "auth/reset-password",
+          method: "POST",
+          body: email,
+        };
+      },
+      invalidatesTags: ["Auth"],
+    }),
+    resetPassword: build.query({
+      query: ({ userId, uniqueString }) =>
+        `/auth/reset-password/${userId}/${uniqueString}`,
+      invalidatesTags: ["Auth"],
+    }),
+    changePassword: build.mutation({
+      query({ userId, password }) {
+        console.log(userId, password);
+        return {
+          url: `auth/changepassword/${userId}`,
+          method: "POST",
+          body: { password },
+        };
+      },
+      invalidatesTags: ["Auth"],
+    }),
   }),
 });
 
@@ -45,4 +71,7 @@ export const {
   useRegisterMutation,
   useVerifyEmailQuery,
   useResendVerificationMutation,
+  useForgotPwdMutation,
+  useResetPasswordQuery,
+  useChangePasswordMutation,
 } = authApi;

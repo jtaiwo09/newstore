@@ -35,13 +35,13 @@ const TextField = ({ label, type, ...props }) => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full box-border">
       {label && <label htmlFor={props.id || props.name}>{label}</label>}
       <div className="flex relative items-center">
         <input
           type={setText()}
           autoComplete="off"
-          className="w-full focus:outline-none border border-solid border-[#e4e4e4] p-[20px] rounded-[5px] text-[#8a8a8a]"
+          className="w-full h-[50px] focus:outline-none border border-solid border-[#000]/30 px-4 rounded-[5px] placeholder::text-[#8a8a8a]"
           {...field}
           {...props}
         />

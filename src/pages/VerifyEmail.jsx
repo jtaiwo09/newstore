@@ -13,8 +13,6 @@ const VerifyEmail = () => {
     uniqueString,
   });
 
-  console.log(isLoading, error);
-
   console.log(userId, uniqueString);
   return (
     <div>
@@ -40,9 +38,11 @@ const VerifyEmail = () => {
                     : "Verification Successful"}
                 </h1>
                 {isError ? (
-                  <p className="font-[400]">{error?.data.message}</p>
+                  <p className="font-[400] text-[14px]">
+                    {error?.data.message}
+                  </p>
                 ) : (
-                  <p className="font-[400]">{data.message}</p>
+                  <p className="font-[400]  text-[14px]">{data.message}</p>
                 )}
                 {!isError ? (
                   <Link
