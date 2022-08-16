@@ -59,7 +59,7 @@ const Register = () => {
           }}
         >
           <Form className="max-w-[500px] w-full shadow-lg py-[35px] px-[30px] bg-white rounded-[5px]">
-            <div className="flex w-full mb-5 sm:space-x-4 flex-col sm:flex-row">
+            <div className="flex w-full mb-3 sm:mb-5 space-y-3 sm:space-y-0 sm:space-x-4 flex-col sm:flex-row">
               <TextField
                 name="firstname"
                 type="text"
@@ -71,10 +71,9 @@ const Register = () => {
                 placeholder="Enter Lastname"
               />
             </div>
-            <div className="mb-5">
+
+            <div className="flex w-full mb-3 sm:mb-5 space-y-3 sm:space-y-0 sm:space-x-4 flex-col sm:flex-row">
               <TextField name="email" type="text" placeholder="Enter email" />
-            </div>
-            <div className="mb-5">
               <TextField
                 name="password"
                 type="password"
