@@ -52,13 +52,12 @@ const Register = () => {
               .oneOf([Yup.ref("password"), null], "Passwords must match"),
           })}
           onSubmit={(values, { setSubmitting }) => {
-            // login(dispatch, values);
             const { confirmPassword, ...others } = values;
             register({ ...others });
             setSubmitting(false);
           }}
         >
-          <Form className="max-w-[500px] w-full shadow-lg py-[35px] px-[30px] bg-white rounded-[5px]">
+          <Form className="max-w-[450px] w-full shadow-lg py-[35px] px-[30px] bg-white rounded-[5px]">
             <div className="flex w-full mb-3 sm:mb-5 space-y-3 sm:space-y-0 sm:space-x-4 flex-col sm:flex-row">
               <TextField
                 name="firstname"

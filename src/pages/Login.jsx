@@ -44,7 +44,7 @@ const Login = () => {
             setSubmitting(false);
           }}
         >
-          <Form className="max-w-[500px] w-full shadow-lg py-[35px] px-[30px] bg-white rounded-[5px]">
+          <Form className="max-w-[450px] w-full shadow-lg py-[35px] px-[30px] bg-white rounded-[5px]">
             <TextField
               name="email"
               type="text"
