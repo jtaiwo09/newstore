@@ -22,11 +22,13 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route path="/search/:keyword" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/verify/:userId/:uniqueString" element={<VerifyEmail />} />
         <Route path="/email-notverified" element={<EmailNotVerified />} />
+
         <Route
           path="/email-verification-sent"
           element={<EmailVerificationSent />}

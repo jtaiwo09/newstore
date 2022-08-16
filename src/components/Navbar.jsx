@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Brand from "../assets/brand.png";
 import { FaShoppingBag } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
@@ -12,12 +12,21 @@ const Navbar = () => {
   const cart = useSelector((state) => state.cart.cart);
   const user = useSelector((state) => state.user.user);
   const [showMenu, setShowMenu] = useState(false);
+  const [keyword, setKeyword] = useState("");
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     const cookies = new Cookies();
     cookies.remove("user");
     localStorage.removeItem("persist:root");
     location.href = "/login";
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (keyword.trim() !== "") {
+      navigate(`/search/${keyword}`);
+    }
   };
   return (
     <header className="py-2.5 sticky top-0 bg-white shadow-sm z-50">
@@ -31,12 +40,13 @@ const Navbar = () => {
           </div>
           <div className="h-[40px] md:h-[50px] w-full md:flex-1 md:px-3 flex items-center order-1 md:-order-none">
             <form
-              action=""
+              onSubmit={handleSubmit}
               className="h-[100%] m-auto w-[100%] max-w-[560px] flex"
             >
               <input
                 type="text"
                 placeholder="Search"
+                onChange={(e) => setKeyword(e.target.value)}
                 className="text-[1rem] rounded-l-[4px] w-[80%] text-[#212529] focus:outline-none px-3 border border-solid border-[#ced4da] h-full"
               />
               <button

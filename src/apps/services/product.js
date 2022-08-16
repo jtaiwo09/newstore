@@ -3,7 +3,7 @@ import { api } from "./api";
 export const productApi = api.injectEndpoints({
   endpoints: (build) => ({
     products: build.query({
-      query: () => "product",
+      query: (keyword = " ") => `product?keyword=${keyword}`,
       invalidatesTags: ["Products"],
     }),
     product: build.query({

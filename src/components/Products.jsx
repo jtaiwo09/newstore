@@ -4,8 +4,8 @@ import { useProductsQuery } from "../apps/services/product";
 import Loader from "./reuseables/Loader";
 import Alert from "./reuseables/Alert";
 
-const Products = () => {
-  const { data, isLoading, isError, error } = useProductsQuery();
+const Products = ({ keyword }) => {
+  const { data, isLoading, isError, error } = useProductsQuery(keyword);
 
   return (
     <section className="container" id="product">

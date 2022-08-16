@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router";
 import Navbar from "../components/Navbar";
 import { FaStar, FaRegStar } from "react-icons/fa";
+import { BsCheck2Circle } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../apps/features/cartSlice";
 import { Link, useNavigate } from "react-router-dom";
@@ -16,6 +17,8 @@ import CurrencyFormatter from "../components/CurrencyFormatter";
 import { BiLoaderCircle } from "react-icons/bi";
 import { format } from "date-fns";
 import Alert from "../components/reuseables/Alert";
+import { useEffect } from "react";
+import { usePurchasedMutation } from "../apps/services/order";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -42,6 +45,11 @@ const ProductDetails = () => {
   const reviews = useSelector((state) => state.products.reviews);
   const user = useSelector((state) => state.user.user);
   useGetProductReviewsQuery(id);
+  const [purchased, result] = usePurchasedMutation();
+
+  useEffect(() => {
+    purchased();
+  }, []);
 
   const addItemToCart = () => {
     const checIfItemInCart = cart.some((product) => product._id == id);
@@ -68,7 +76,6 @@ const ProductDetails = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const data = {
       ...review,
       fullname: `${user.firstname} ${user.lastname.charAt(0)}`,
@@ -201,31 +208,42 @@ const ProductDetails = () => {
                             className="w-[60px] h-[60px] object-contain"
                             alt=""
                           />
-                          <div className="ml-3">
-                            <strong className="font-normal">
-                              {review.name}.
-                            </strong>
-                            <div className="flex my-1">
-                              {Array(review.rating)
-                                .fill(0)
-                                .map((_, i) => (
-                                  <FaStar
-                                    key={i}
-                                    className="text-[#ebb450] text-xs mr-0.5"
-                                  />
-                                ))}
-                              {Array(5 - review.rating)
-                                .fill(0)
-                                .map((_, i) => (
-                                  <FaRegStar
-                                    key={i}
-                                    className="text-[#ebb450] text-xs mr-0.5"
-                                  />
-                                ))}
+                          <div className="flex justify-between w-full">
+                            <div className="ml-3">
+                              <strong className="font-normal">
+                                {review.name}.
+                              </strong>
+                              <div className="flex my-1">
+                                {Array(review.rating)
+                                  .fill(0)
+                                  .map((_, i) => (
+                                    <FaStar
+                                      key={i}
+                                      className="text-[#ebb450] text-xs mr-0.5"
+                                    />
+                                  ))}
+                                {Array(5 - review.rating)
+                                  .fill(0)
+                                  .map((_, i) => (
+                                    <FaRegStar
+                                      key={i}
+                                      className="text-[#ebb450] text-xs mr-0.5"
+                                    />
+                                  ))}
+                              </div>
+                              <span className="text-xs">
+                                {format(new Date(review.createdAt), "Pp")}
+                              </span>
                             </div>
-                            <span className="text-xs">
-                              {format(new Date(review.createdAt), "Pp")}
-                            </span>
+                            {result &&
+                              result?.data?.data?.includes(review.user) && (
+                                <div className="self-end flex items-center text-green-500">
+                                  <BsCheck2Circle className=" mr-1" />
+                                  <small className="text-[14px]">
+                                    Purchased
+                                  </small>
+                                </div>
+                              )}
                           </div>
                         </div>
                         <div className="my-4 text-[#055160] bg-[#cff4fc] border border-solid border-[#b6effb] p-4">

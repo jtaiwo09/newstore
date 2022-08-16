@@ -51,12 +51,14 @@ const Login = () => {
                 {error.data.message}
               </Alert>
             )}
-            <TextField
-              name="email"
-              type="text"
-              placeholder="Enter email"
-              className="w-full mb-[20px] focus:outline-none border border-solid border-[#e4e4e4] p-[20px] rounded-[5px] text-[#8a8a8a]"
-            />
+            <div className="mb-[20px]">
+              <TextField
+                name="email"
+                type="text"
+                placeholder="Enter email"
+                className="w-full focus:outline-none border border-solid border-[#e4e4e4] p-[20px] rounded-[5px] text-[#8a8a8a]"
+              />
+            </div>
             <TextField
               name="password"
               type="password"

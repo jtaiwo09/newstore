@@ -12,7 +12,16 @@ export const orderApi = api.injectEndpoints({
       },
       invalidatesTags: ["Order"],
     }),
+    purchased: build.mutation({
+      query() {
+        return {
+          url: "order/purchased",
+          method: "POST",
+        };
+      },
+      invalidatesTags: ["Order"],
+    }),
   }),
 });
 
-export const { usePlaceOrderMutation } = orderApi;
+export const { usePlaceOrderMutation, usePurchasedMutation } = orderApi;
