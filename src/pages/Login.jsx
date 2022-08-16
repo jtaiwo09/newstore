@@ -12,11 +12,6 @@ const Login = () => {
   const { search } = useLocation();
   const redirect = search.split("=")[1];
 
-  if (isSuccess) {
-    if (redirect) navigate(`/${redirect}`);
-    else navigate("/");
-  }
-
   return (
     <div>
       <Navbar />
@@ -33,7 +28,19 @@ const Login = () => {
             password: Yup.string().required("Password is required"),
           })}
           onSubmit={(values, { setSubmitting }) => {
-            login(values);
+            login(values)
+              .unwrap()
+              .then(() => {
+                if (redirect) navigate(`/${redirect}`);
+                else navigate("/");
+                localStorage.removeItem("email");
+              })
+              .catch((error) => {
+                localStorage.setItem("email", values.email);
+                if (error.status === 409) {
+                  navigate("/email-notverified");
+                }
+              });
             setSubmitting(false);
           }}
         >

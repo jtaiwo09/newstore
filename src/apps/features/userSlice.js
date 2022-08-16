@@ -24,6 +24,9 @@ const userSlice = createSlice({
           state.user = payload;
         }
       )
+      .addMatcher(authApi.endpoints.register.matchFulfilled, () => {
+        //
+      })
       .addMatcher(
         userApi.endpoints.updateProfile.matchFulfilled,
         (state, { payload }) => {

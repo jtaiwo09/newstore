@@ -12,6 +12,9 @@ import Profile from "./pages/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Order from "./pages/Order";
 import "./App.css";
+import VerifyEmail from "./pages/VerifyEmail";
+import EmailNotVerified from "./pages/EmailNotVerified";
+import EmailVerificationSent from "./pages/EmailVerificationSent";
 
 function App() {
   return (
@@ -22,6 +25,12 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/verify/:userId/:uniqueString" element={<VerifyEmail />} />
+        <Route path="/email-notverified" element={<EmailNotVerified />} />
+        <Route
+          path="/email-verification-sent"
+          element={<EmailVerificationSent />}
+        />
         <Route path="/cart" element={<Cart />} />
         <Route path="/" element={<ProtectedRoute />}>
           <Route exact path="/profile" element={<Profile />} />
