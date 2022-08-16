@@ -1,9 +1,8 @@
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import TextField from "../components/TextField";
-import { useSelector } from "react-redux";
 import { useRegisterMutation } from "../apps/services/auth";
 import { BiLoaderCircle } from "react-icons/bi";
 import Alert from "../components/reuseables/Alert";
@@ -23,13 +22,6 @@ const Register = () => {
     <div className="relative">
       <Navbar />
       <div className="py-[50px] px-[20px] flex justify-center items-center flex-col">
-        {isError && (
-          <div>
-            <Alert className="!mb-3" type="error" show={isError}>
-              {registerError.data.error}
-            </Alert>
-          </div>
-        )}
         <Formik
           initialValues={{
             firstname: "",
@@ -57,8 +49,13 @@ const Register = () => {
             setSubmitting(false);
           }}
         >
-          <Form className="max-w-[450px] w-full shadow-lg py-[35px] px-[30px] bg-white rounded-[5px]">
-            <div className="flex w-full mb-3 sm:mb-5 space-y-3 sm:space-y-0 sm:space-x-4 flex-col sm:flex-row">
+          <Form className="max-w-[600px] w-full shadow-lg py-[35px] px-[30px] bg-white rounded-[5px]">
+            {isError && (
+              <Alert className="!mb-3" type="error" show={isError}>
+                {registerError.data.error}
+              </Alert>
+            )}
+            <div className="flex w-full mb-2 sm:mb-5 space-y-2 sm:space-y-0 sm:space-x-4 flex-col sm:flex-row">
               <TextField
                 name="firstname"
                 type="text"
@@ -71,7 +68,7 @@ const Register = () => {
               />
             </div>
 
-            <div className="flex w-full mb-3 sm:mb-5 space-y-3 sm:space-y-0 sm:space-x-4 flex-col sm:flex-row">
+            <div className="flex w-full mb-2 sm:mb-5 space-y-2 sm:space-y-0 sm:space-x-4 flex-col sm:flex-row">
               <TextField name="email" type="text" placeholder="Enter email" />
               <TextField
                 name="password"
@@ -95,9 +92,9 @@ const Register = () => {
               )}
             </button>
             <p className="text-center mt-[30px] text-[#7a7a7a]">
-              Don't have an account?{" "}
-              <Link to="/register" className="hover:underline">
-                Register here
+              Already have an account?{" "}
+              <Link to="/login" className="hover:underline">
+                Login here
               </Link>
             </p>
           </Form>

@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import TextField from "../components/TextField";
 import { BiLoaderCircle } from "react-icons/bi";
 import { useLoginMutation } from "../apps/services/auth";
+import Alert from "../components/reuseables/Alert";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -45,6 +46,11 @@ const Login = () => {
           }}
         >
           <Form className="max-w-[450px] w-full shadow-lg py-[35px] px-[30px] bg-white rounded-[5px]">
+            {isError && (
+              <Alert type="error" show={isError}>
+                {error.data.message}
+              </Alert>
+            )}
             <TextField
               name="email"
               type="text"

@@ -5,7 +5,7 @@ const Alert = ({ children, type, show }) => {
 
   useEffect(() => {
     if (show) setIsShow(true);
-    setTimeout(() => setIsShow(false), 3000);
+    setTimeout(() => setIsShow(false), 5000);
     return () => clearTimeout();
   }, [show]);
 
