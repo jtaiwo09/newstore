@@ -222,8 +222,10 @@ const Profile = () => {
                           {orderList.map((order) => (
                             <tr
                               key={order._id}
-                              className={`bg-[#f8d7da] border-b border-solid border-[#f5c2c7] ${
-                                order.isPaid ? "bg-green-50" : "bg-[#f8d7da]"
+                              className={`border-b border-solid ${
+                                order.isPaid
+                                  ? "!bg-green-50"
+                                  : "bg-[#f8d7da] border-[#f5c2c7]"
                               }`}
                             >
                               <td>
