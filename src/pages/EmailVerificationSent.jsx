@@ -7,7 +7,7 @@ const EmailVerificationSent = () => {
     <div className="bg-green-50 fixed w-full">
       <div className="container h-screen w-full">
         <div className="px-5">
-          <div className="mx-auto bg-white max-w-[380px] w-full mt-[40%] sm:mt-[10%] p-[30px] text-center rounded-[8px] border border-solid border-black/20 shadow-[0_0_20px_0_rgba(0,0,0,0.0.5)] animate__animated animate__slideInUp">
+          <div className="mx-auto bg-white max-w-[380px] w-full mt-[40%] sm:mt-[10%] p-[30px] text-center rounded-[8px] border border-solid border-black/20 shadow-[0_0_20px_0_rgba(0,0,0,0.0.05)] animate__animated animate__slideInUp">
             <img
               className="w-[80px] mb-5 block mx-auto"
               src="https://res.cloudinary.com/citi-tasker/image/upload/v1660605068/STORE/webImages/envelope_ddl3bx.png"

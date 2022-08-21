@@ -21,7 +21,7 @@ const EmailNotVerified = () => {
     <div className="bg-red-50 h-screen fixed w-full">
       <div className="container w-full">
         <div className="px-5">
-          <div className="mx-auto max-w-[400px] text-center bg-white w-full mt-[40%] sm:mt-[10%] rounded-[8px] p-[30px] border border-solid border-black/20 shadow-[0_0_20px_0_rgba(0,0,0,0.0.5)] animate__animated animate__animated animate__slideInUp">
+          <div className="mx-auto max-w-[400px] text-center bg-white w-full mt-[40%] sm:mt-[10%] rounded-[8px] p-[30px] border border-solid border-black/20 shadow-[0_0_20px_0_rgba(0,0,0,0.0.05)] animate__animated animate__animated animate__slideInUp">
             <img
               className="w-[80px] mb-5 block mx-auto"
               src="https://res.cloudinary.com/citi-tasker/image/upload/v1660605068/STORE/webImages/envelope_ddl3bx.png"
