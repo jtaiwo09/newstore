@@ -19,29 +19,22 @@ const Product = ({ product }) => {
           <div>
             <p className="text-[#252525]">{product.name}</p>
             <div className="flex items-center my-[5px]">
-              {product.rating > 0 && (
-                <div className="flex items-center mr-2.5">
-                  {Array(product.rating)
-                    .fill(0)
-                    .map((_, i) => (
-                      <FaStar
-                        key={i}
-                        className="text-[#ebb450] text-xs mr-0.5"
-                      />
-                    ))}
-                  {Array(5 - product.rating)
-                    .fill(0)
-                    .map((_, i) => (
-                      <FaRegStar
-                        key={i}
-                        className="text-[#ebb450] text-xs mr-0.5"
-                      />
-                    ))}
-                </div>
-              )}
-              <span className="">
-                {product.numReviews > 0 ? product.numReviews : "No"} reviews
-              </span>
+              <div className="flex items-center mr-2.5">
+                {Array(product.rating)
+                  .fill(0)
+                  .map((_, i) => (
+                    <FaStar key={i} className="text-[#ebb450] text-xs mr-0.5" />
+                  ))}
+                {Array(5 - product.rating)
+                  .fill(0)
+                  .map((_, i) => (
+                    <FaRegStar
+                      key={i}
+                      className="text-[#ebb450] text-xs mr-0.5"
+                    />
+                  ))}
+              </div>
+              <span className="">{product.numReviews} reviews</span>
             </div>
             <h3 className="mt-[13px] font-semibold text-[19px]">
               <CurrencyFormatter price={product.price} />
