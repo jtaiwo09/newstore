@@ -49,7 +49,7 @@ const ForgotPassword = () => {
               setSubmitting(false);
             }}
           >
-            <Form className="w-full sm:border border-solid border-black/20 shadow-[0_0_20px_0_rgba(0,0,0,0.0.05)] p-[30px] bg-white rounded-[5px]">
+            <Form className="w-full sm:border border-solid border-black/20 sm:shadow-[0_0_20px_0_rgba(0,0,0,0.0.05)] p-[30px] bg-white rounded-[5px]">
               <div className="mb-[20px]">
                 <TextField name="email" type="text" placeholder="Enter email" />
               </div>

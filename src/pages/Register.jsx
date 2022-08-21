@@ -58,7 +58,7 @@ const Register = () => {
               setSubmitting(false);
             }}
           >
-            <Form className="max-w-[600px] w-full sm:border border-solid border-black/20 shadow-[0_0_20px_0_rgba(0,0,0,0.0.05)] p-[30px] bg-white rounded-[5px]">
+            <Form className="max-w-[600px] w-full sm:border border-solid border-black/20 sm:shadow-[0_0_20px_0_rgba(0,0,0,0.0.05)] p-[30px] bg-white rounded-[5px]">
               <div className="flex w-full mb-2 sm:mb-3 space-y-2 sm:space-y-0 sm:space-x-4 flex-col sm:flex-row">
                 <TextField
                   name="firstname"
