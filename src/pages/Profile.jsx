@@ -86,7 +86,7 @@ const Profile = () => {
                   >
                     Order List
                     <span className="w-6 h-6 flex rounded-full items-center justify-center text-white bg-red-500">
-                      {orderList.length}
+                      {orderList?.length}
                     </span>
                   </button>
                 </div>
@@ -207,7 +207,7 @@ const Profile = () => {
                 </div>
               ) : (
                 <>
-                  {orderList.length ? (
+                  {orderList?.length ? (
                     <div className="!mb-[3rem] md-s:px-3 w-full md-s:w-[70%] overflow-x-scroll">
                       <table className="w-[100%] min-w-[516px] max-h-fit">
                         <thead>
