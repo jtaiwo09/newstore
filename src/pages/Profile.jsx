@@ -86,7 +86,7 @@ const Profile = () => {
                   >
                     Order List
                     <span className="w-6 h-6 flex rounded-full items-center justify-center text-white bg-red-500">
-                      {orderList?.length}
+                      {orderList?.length ? orderList?.length : 0}
                     </span>
                   </button>
                 </div>
